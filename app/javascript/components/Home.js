@@ -5,6 +5,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         {this.props.greeting}
+        <button>Add Machine</button>
       </React.Fragment>
     );
   }
