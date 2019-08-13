@@ -4,8 +4,12 @@ class Home extends React.Component {
   render () {
     return (
       <React.Fragment>
-        {this.props.greeting}
-        <button>Add Machine</button>
+        <div className='center-home-contents'>
+          <h1>{this.props.greeting}</h1>
+          <div>
+            <a className='add-machine-button' href='/'>Add Machine</a>
+          </div>
+        </div>
       </React.Fragment>
     );
   }
