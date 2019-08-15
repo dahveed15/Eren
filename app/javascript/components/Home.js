@@ -7,7 +7,7 @@ class Home extends React.Component {
         <div className='center-home-contents'>
           <h1>{this.props.greeting}</h1>
           <div>
-            <a className='add-machine-button' href='/'>Add Machine</a>
+            <a className='add-machine-button' href='/machines/new'>Add Machine</a>
           </div>
         </div>
       </React.Fragment>
