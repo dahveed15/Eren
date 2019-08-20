@@ -1,1 +1,10 @@
-<%= react_component("Home", { greeting: "Welcome to Eren, the best app ever!" }) %> 
+<div class='center-home-contents'>
+  <h1>Welcome to Eren, the best app ever!</h1>
+  <div>
+    <%= link_to "Add Machine", new_machines_path, class: 'add-machine-button' %>
+    <p>All Machines</p>
+    <% @machines.each do |machine| %>
+      <p><%= machine.name %></p>
+    <% end %>
+  </div>
+</div>

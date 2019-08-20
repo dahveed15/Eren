@@ -12,7 +12,6 @@ class MachinesController < ApplicationController
   end
 
   private
-
   def machine_params
     params.require(:machine).permit(:name)
   end

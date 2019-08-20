@@ -6,6 +6,5 @@ RSpec.describe 'Splash page', type: :feature, js: true do
     expect(page).to have_content('Welcome to Eren, the best app ever!')
     find_link('Add Machine').click
     expect(page).to have_content('Add a Machine')
-    expect(page).to have_content('All Machines')
   end
 end
