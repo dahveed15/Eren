@@ -3,8 +3,19 @@
   <div>
     <%= link_to "Add Machine", new_machines_path, class: 'add-machine-button' %>
     <p>All Machines</p>
-    <% @machines.each do |machine| %>
-      <p><%= machine.name %></p>
-    <% end %>
+    <table class='table-styling'>
+      <tr>
+        <td>Machine</td>
+        <td>Most Recent Exercise</td>
+        <td>New Exercise</td>
+      </tr>
+      <% @machines.each do |machine| %>
+        <tr>
+          <td><%= machine.name %></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
