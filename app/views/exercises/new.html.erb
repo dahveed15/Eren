@@ -1,1 +1,7 @@
 <p>Add an Exercise for benchpress</p>
+
+<%= form_with model: @machine do |f| %>
+  <%= f.text_field :reps %>
+  <%= f.text_field :sets %>
+  <%= f.submit "Create Exercise" %>
+<% end %>
