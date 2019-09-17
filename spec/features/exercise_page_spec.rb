@@ -6,12 +6,14 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
     let!(:benchpress_machine) { Machine.create(name: 'benchpress') }
 
     scenario 'index page' do
-      visit new_machines_exercises_path
+      visit new_machine_exercise_path(benchpress_machine)
       fill_in('exercise[reps]', :with => '10')
       fill_in('exercise[sets]', :with => '3')
+      fill_in('exercise[weight_value]', :with => '120')
       find_button('Create Exercise').click
-      expect(page).to have_content('3 sets of 10 reps')
       expect(benchpress_machine.exercises.count).to eq(1)
+      expect(page).to have_content('3 sets of 10 reps at 120 lbs')
+
     end
   end
 end
