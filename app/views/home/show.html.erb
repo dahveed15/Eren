@@ -1,7 +1,7 @@
 <div class='center-home-contents'>
   <h1>Welcome to Eren, the best app ever!</h1>
   <div>
-    <%= link_to "Add Machine", new_machines_path, class: 'add-machine-button' %>
+    <%= link_to "Add Machine", new_machine_path, class: 'add-machine-button' %>
     <p>All Machines</p>
     <table class='table-styling'>
       <tr>
@@ -12,8 +12,12 @@
       <% @machines.each do |machine| %>
         <tr>
           <td><%= machine.name %></td>
-          <td></td>
-          <td><%= link_to "Add Exercise", new_machines_exercises_path %></td>
+          <% if machine.exercises %>
+          <td><%= "#{machine.exercises.last.sets} sets of #{machine.exercises.last.reps} reps at #{machine.exercises.last.weight_value} lbs" %></td>
+          <% else %>
+            <td></td>
+          <% end %>
+          <td><%= link_to "Add Exercise", new_machine_exercise_path(machine) %></td>
         </tr>
       <% end %>
     </table>
