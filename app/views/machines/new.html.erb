@@ -1,6 +1,7 @@
 <p>Add a Machine</p>
 
 <%= form_with model: @machine do |f| %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit "Create Machine" %>
 <% end %>
