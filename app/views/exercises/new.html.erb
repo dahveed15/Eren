@@ -1,8 +1,12 @@
 <p>Add an Exercise for benchpress</p>
 
 <%= form_for @exercise, url: machine_exercises_path(@machine) do |f| %>
+  <%= f.label :reps %>
   <%= f.text_field :reps %>
+  <%= f.label :sets %>
   <%= f.text_field :sets %>
+  <%= f.label :weight_value %>
   <%= f.text_field :weight_value %>
+  <%= f.select :units, options_for_select([ "lbs", "kg", "units" ]) %>
   <%= f.submit "Create Exercise" %>
 <% end %>

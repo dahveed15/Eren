@@ -12,8 +12,8 @@
       <% @machines.each do |machine| %>
         <tr>
           <td><%= machine.name %></td>
-          <% if machine.exercises %>
-          <td><%= "#{machine.exercises.last.sets} sets of #{machine.exercises.last.reps} reps at #{machine.exercises.last.weight_value} lbs" %></td>
+          <% if machine.exercises.present? %>
+            <td><%= "#{machine.exercises.last.sets} sets of #{machine.exercises.last.reps} reps at #{machine.exercises.last.weight_value} #{machine.exercises.last.units}" %></td>
           <% else %>
             <td></td>
           <% end %>
