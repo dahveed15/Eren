@@ -5,6 +5,9 @@ ruby '2.5.5'
 
 gem 'webpacker'
 
+#user auth
+gem 'devise'
+
 #add react INTSTANTLY
 gem 'react-rails'
 
