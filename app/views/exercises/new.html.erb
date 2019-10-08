@@ -1,4 +1,4 @@
-<p>Add an Exercise for benchpress</p>
+<p>Add an Exercise for <%= @machine.name %> </p>
 
 <%= form_for @exercise, url: machine_exercises_path(@machine) do |f| %>
   <%= f.label :reps %>
