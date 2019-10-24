@@ -77,8 +77,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  def login_as_user
-    user = FactoryBot.create(:user)
+  def log_in(user)
     login_as(user, :scope => :user)
   end
 end
