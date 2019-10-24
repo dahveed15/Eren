@@ -6,7 +6,8 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
     let!(:benchpress_machine) { Machine.create(name: 'benchpress') }
 
     scenario 'index page' do
-      login_as_user
+      user = FactoryBot.create(:user)
+      log_in(user)
       visit new_machine_exercise_path(benchpress_machine)
       fill_in('exercise[reps]', :with => '10')
       fill_in('exercise[sets]', :with => '3')
