@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Add Machine page', type: :feature, js: true do
 
   context 'with a previous machine already created' do
-    let!(:benchpress_machine) { Machine.create(name: 'benchpress') }
+    let(:user) { FactoryBot.create(:user) }
+    let!(:benchpress_machine) { Machine.create(name: 'benchpress', user: user) }
 
     scenario 'index page' do
-      user = FactoryBot.create(:user)
       log_in(user)
       visit new_machine_exercise_path(benchpress_machine)
       fill_in('exercise[reps]', :with => '10')

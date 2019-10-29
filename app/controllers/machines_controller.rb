@@ -5,7 +5,7 @@ class MachinesController < ApplicationController
   end
 
   def create
-    @machine = Machine.new(machine_params)
+    @machine = current_user.machines.new(machine_params)
     if @machine.save
       redirect_to root_path
     end
