@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @machines = Machine.all
+    @machines = current_user.machines
   end
 
 end
