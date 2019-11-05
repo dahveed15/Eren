@@ -1,6 +1,5 @@
 .center-home-contents {
-  text-align: center;
-}
+  text-align: center; }
 
 .add-machine-button {
   background-color: #30bdc9;
@@ -8,13 +7,12 @@
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-}
+  display: inline-block; }
 
 .table-styling {
-  table, th, td {
+  border-collapse: collapse; }
+  .table-styling table, .table-styling th, .table-styling td {
     padding: 10px;
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-}
+    border: 1px solid black; }
+
+/*# sourceMappingURL=home.css.map */
