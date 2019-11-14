@@ -18,5 +18,12 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
       expect(page).to have_content('3 sets of 10 reps at 120 kg')
 
     end
+
+    scenario 'error handling' do
+      log_in(user)
+      visit new_machine_exercise_path(benchpress_machine)
+      find_button('Create Exercise').click
+      expect(page).to have_content('')
+    end
   end
 end
