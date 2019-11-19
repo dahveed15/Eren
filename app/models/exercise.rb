@@ -4,7 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  reps         :integer          not null
-#  sets         :integer
+#  sets         :integer          default(1), not null
 #  weight_value :integer          not null
 #  machine_id   :bigint
 #  created_at   :datetime         not null
