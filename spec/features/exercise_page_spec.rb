@@ -23,7 +23,9 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
       log_in(user)
       visit new_machine_exercise_path(benchpress_machine)
       find_button('Create Exercise').click
-      expect(page).to have_content('')
+      expect(page).to have_content("Reps can't be blank")
+      expect(page).to have_content("Sets can't be blank")
+      expect(page).to have_content("Weight value can't be blank")
     end
   end
 end

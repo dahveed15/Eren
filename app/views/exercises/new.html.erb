@@ -1,5 +1,13 @@
 <p>Add an Exercise for <%= @machine.name %> </p>
 
+<% if @exercise && @exercise.errors.any? %>
+  <ul>
+  <% @exercise.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @exercise, url: machine_exercises_path(@machine) do |f| %>
   <%= f.label :reps %>
   <%= f.text_field :reps %>
