@@ -8,9 +8,15 @@ class ExercisesController < ApplicationController
   def create
     @machine = Machine.find(params[:machine_id])
     @exercise = @machine.exercises.new(exercise_params)
+
     if @exercise.save
       redirect_to root_path
+    else
+      p '***************************'
+      p @exercise.errors.full_messages
+      render :new
     end
+
   end
 
   def exercise_params
