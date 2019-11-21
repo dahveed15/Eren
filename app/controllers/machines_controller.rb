@@ -8,6 +8,8 @@ class MachinesController < ApplicationController
     @machine = current_user.machines.new(machine_params)
     if @machine.save
       redirect_to root_path
+    else
+      render :new
     end
   end
 
