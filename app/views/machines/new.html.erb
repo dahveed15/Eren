@@ -1,6 +1,14 @@
 <p>Add a Machine</p>
 
-<%= form_with model: @machine do |f| %>
+<% if @machine.errors.any? %>
+  <ul>
+  <% @machine.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @machine, local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit "Create Machine" %>

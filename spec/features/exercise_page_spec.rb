@@ -17,11 +17,12 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
       expect(benchpress_machine.exercises.count).to eq(1)
       expect(page).to have_content('3 sets of 10 reps at 120 kg')
 
-    end
+    end 
 
     scenario 'error handling' do
       log_in(user)
       visit new_machine_exercise_path(benchpress_machine)
+      fill_in('exercise[sets]', :with => '')
       find_button('Create Exercise').click
       expect(page).to have_content("Reps can't be blank")
       expect(page).to have_content("Sets can't be blank")

@@ -12,8 +12,6 @@ class ExercisesController < ApplicationController
     if @exercise.save
       redirect_to root_path
     else
-      p '***************************'
-      p @exercise.errors.full_messages
       render :new
     end
 
