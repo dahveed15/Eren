@@ -17,7 +17,19 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
       expect(benchpress_machine.exercises.count).to eq(1)
       expect(page).to have_content('3 sets of 10 reps at 120 kg')
 
-    end 
+    end
+
+    context 'with an exercise already created' do
+      let!(:previous_exercise) { benchpress_machine.exercises.create(reps: 12, sets: 5, weight_value: 100, units: 'kg')}
+      scenario 'it prefills the input fields with the previous exercise data' do
+        log_in(user)
+        visit new_machine_exercise_path(benchpress_machine)
+        expect(find_field('exercise[reps]').value).to eq(previous_exercise.reps)
+        expect(find_field('exercise[sets]').value).to eq(previous_exercise.sets)
+        expect(find_field('exercise[weight_value]').value).to eq(previous_exercise.weight_value)
+        expect(find_field('exercise[units]').value).to eq(previous_exercise.units)
+      end
+    end
 
     scenario 'error handling' do
       log_in(user)
