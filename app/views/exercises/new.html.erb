@@ -10,7 +10,7 @@
 
 <%= form_with model: @exercise, url: machine_exercises_path(@machine), local: true do |f| %>
   <%= f.label :reps %>
-  <%= f.text_field :reps %>
+  <%= f.text_field :reps, :value => @machine.exercises.last.reps %>
   <%= f.label :sets %>
   <%= f.text_field :sets %>
   <%= f.label :weight_value %>
