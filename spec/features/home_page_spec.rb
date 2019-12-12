@@ -7,6 +7,7 @@ RSpec.describe 'Splash page', type: :feature, js: true do
   scenario 'index page' do
     log_in(user)
     visit root_path
+    expect(page).to have_content("Signed in as: #{user.email}")
     expect(page).to have_content('Welcome to Eren, the best app ever!')
     find_link('Add Machine').click
     expect(page).to have_content('Add a Machine')
