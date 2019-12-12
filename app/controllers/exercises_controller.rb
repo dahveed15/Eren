@@ -2,6 +2,7 @@ class ExercisesController < ApplicationController
 
   def new
     @machine = Machine.find(params[:machine_id])
+    @previous_exercise = @machine.exercises.last
     @exercise = @machine.exercises.new
   end
 

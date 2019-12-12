@@ -10,11 +10,11 @@
 
 <%= form_with model: @exercise, url: machine_exercises_path(@machine), local: true do |f| %>
   <%= f.label :reps %>
-  <%= f.text_field :reps, :value => @machine.exercises.last.reps %>
+  <%= f.text_field :reps, :value => @previous_exercise&.reps %>
   <%= f.label :sets %>
-  <%= f.text_field :sets %>
+  <%= f.text_field :sets, :value => @previous_exercise&.sets || @exercise.sets %>
   <%= f.label :weight_value %>
-  <%= f.text_field :weight_value %>
-  <%= f.select :units, options_for_select([ "lbs", "kg", "units" ]) %>
+  <%= f.text_field :weight_value, :value => @previous_exercise&.weight_value %>
+  <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
   <%= f.submit "Create Exercise" %>
 <% end %>

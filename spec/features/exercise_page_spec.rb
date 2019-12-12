@@ -24,10 +24,10 @@ RSpec.describe 'Add Machine page', type: :feature, js: true do
       scenario 'it prefills the input fields with the previous exercise data' do
         log_in(user)
         visit new_machine_exercise_path(benchpress_machine)
-        expect(find_field('exercise[reps]').value).to eq(previous_exercise.reps)
-        expect(find_field('exercise[sets]').value).to eq(previous_exercise.sets)
-        expect(find_field('exercise[weight_value]').value).to eq(previous_exercise.weight_value)
-        expect(find_field('exercise[units]').value).to eq(previous_exercise.units)
+        expect(find_field('exercise[reps]').value).to eq('12')
+        expect(find_field('exercise[sets]').value).to eq('5')
+        expect(find_field('exercise[weight_value]').value).to eq('100')
+        expect(find_field('exercise[units]').value).to eq('kg')
       end
     end
 
