@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Heroku Info
+* Migrate: heroku run rake db:migrate
+* Deploy: git push heroku master
+* Rails console: heroku run rails console
