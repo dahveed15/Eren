@@ -9,18 +9,26 @@
 <% end %>
 
 <%= form_with model: @exercise, url: machine_exercises_path(@machine), local: true do |f| %>
-  <div class='form-input-spacing'>
-    <%= f.label :reps, class: 'label-spacing' %>
-    <%= f.text_field :reps, :value => @previous_exercise&.reps %>
-  </div>
-  <div class='form-input-spacing'>
-    <%= f.label :sets, class: 'label-spacing' %>
-    <%= f.text_field :sets, :value => @previous_exercise&.sets || @exercise.sets %>
-  </div>
-  <div class='form-input-spacing'>
-    <%= f.label :weight_value, class: 'label-spacing' %>
-    <%= f.text_field :weight_value, :value => @previous_exercise&.weight_value %>
-    <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
+  <div class='exercise-form-input-fields'>
+    <div class='form-input-spacing'>
+      <%= f.label :reps, class: 'label-spacing' %>
+      <%= f.text_field :reps, :value => @previous_exercise&.reps %>
+      <div class='form-input-extra-field'>
+      </div>
+    </div>
+    <div class='form-input-spacing'>
+      <%= f.label :sets, class: 'label-spacing' %>
+      <%= f.text_field :sets, :value => @previous_exercise&.sets || @exercise.sets %>
+      <div class='form-input-extra-field'>
+      </div>
+    </div>
+    <div class='form-input-spacing'>
+      <%= f.label :weight_value, class: 'label-spacing' %>
+      <%= f.text_field :weight_value, :value => @previous_exercise&.weight_value %>
+      <div class='form-input-extra-field'>
+        <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
+      </div>
+    </div>
   </div>
   <%= f.submit "Create Exercise" %>
 <% end %>
