@@ -1,7 +1,21 @@
 .form-input-spacing {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end; }
+
+.form-input-spacing > label {
+  flex: 1; }
+
+.form-input-spacing > input {
+  flex: 2; }
 
 .label-spacing {
   margin-right: 10px; }
+
+.exercise-form-input-fields {
+  max-width: 400px; }
+
+.form-input-extra-field {
+  flex: 1; }
 
 /*# sourceMappingURL=exercise.css.map */
