@@ -29,5 +29,12 @@ RSpec.describe 'Splash page', type: :feature, js: true do
       visit root_path
       expect(page).not_to have_content(benchpress_machine.name)
     end
+
+    scenario 'navigate to machine show' do
+      log_in(user)
+      visit root_path
+      find_link('benchpress').click
+      expect(page).to have_content('No exercises found for benchpress.')
+    end
   end
 end
