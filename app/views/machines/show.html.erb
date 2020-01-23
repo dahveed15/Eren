@@ -1,0 +1,6 @@
+
+<% if @machine.exercises.present? %>
+  <p><%= @machine.name %></p>
+<% else %>
+  <p><%= "No exercises found for #{@machine.name}." %></p>
+<% end %>

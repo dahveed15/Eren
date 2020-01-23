@@ -13,6 +13,10 @@ class MachinesController < ApplicationController
     end
   end
 
+  def show
+    @machine = Machine.find(params[:id])
+  end
+
   private
   def machine_params
     params.require(:machine).permit(:name)

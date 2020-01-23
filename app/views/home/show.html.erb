@@ -12,7 +12,7 @@
         </tr>
         <% @machines.each do |machine| %>
           <tr>
-            <td><%= machine.name %></td>
+            <td><%= link_to machine.name, machine_path(machine) %></td>
             <% if machine.exercises.present? %>
               <td><%= "#{machine.exercises.last.sets} sets of #{machine.exercises.last.reps} reps at #{machine.exercises.last.weight_value} #{machine.exercises.last.units}" %></td>
             <% else %>
