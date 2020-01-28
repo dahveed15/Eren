@@ -1,7 +1,3 @@
-.center-home-contents {
-  text-align: center;
-}
-
 .signed-in-as-header {
   margin-bottom: 10px;
 }
@@ -13,18 +9,4 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-}
-
-.table-styling {
-  border-collapse: collapse;
-
-  table, th, td {
-    padding: 10px;
-    border: 1px solid black;
-  }
-}
-
-.center-weight-data-table {
-  display: flex;
-  justify-content: center;
 }
