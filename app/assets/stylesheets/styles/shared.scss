@@ -1,0 +1,17 @@
+.table-styling {
+  border-collapse: collapse;
+
+  table, th, td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+}
+
+.center-weight-data-table {
+  display: flex;
+  justify-content: center;
+}
+
+.center-contents {
+  text-align: center;
+}
