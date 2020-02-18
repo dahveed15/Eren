@@ -10,19 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_172336) do
+ActiveRecord::Schema.define(version: 2020_02_18_171338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "exercises", force: :cascade do |t|
-    t.integer "reps", null: false
-    t.integer "sets", default: 1, null: false
-    t.integer "weight_value", null: false
+    t.integer "reps"
+    t.integer "sets"
+    t.integer "weight_value"
     t.bigint "machine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "units"
+    t.integer "duration"
+    t.string "duration_unit"
+    t.integer "distance"
+    t.string "distance_unit"
     t.index ["machine_id"], name: "index_exercises_on_machine_id"
   end
 

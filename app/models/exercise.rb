@@ -2,14 +2,18 @@
 #
 # Table name: exercises
 #
-#  id           :bigint           not null, primary key
-#  reps         :integer          not null
-#  sets         :integer          default(1), not null
-#  weight_value :integer          not null
-#  machine_id   :bigint
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  units        :string
+#  id            :bigint           not null, primary key
+#  reps          :integer
+#  sets          :integer
+#  weight_value  :integer
+#  machine_id    :bigint
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  units         :string
+#  duration      :integer
+#  duration_unit :string
+#  distance      :integer
+#  distance_unit :string
 #
 
 class Exercise < ApplicationRecord
