@@ -14,10 +14,11 @@
 #  duration_unit :string
 #  distance      :integer
 #  distance_unit :string
+#  activity_id   :bigint
 #
 
 class Exercise < ApplicationRecord
-  belongs_to :machine
+  belongs_to :activity
   POSSIBLE_WEIGHT_UNITS = ['lbs', 'kg', 'units']
   validates :reps, :sets, :weight_value, presence: true
 

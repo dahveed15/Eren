@@ -9,17 +9,17 @@ RSpec.describe 'Splash page', type: :feature, js: true do
     visit root_path
     expect(page).to have_content("Signed in as: #{user.email}")
     expect(page).to have_content('Welcome to Eren, the best app ever!')
-    find_link('Add Machine').click
-    expect(page).to have_content('Add a Machine')
+    find_link('Add Activity').click
+    expect(page).to have_content('Add an Activity')
   end
 
-  context 'with a machine created' do
-    let!(:benchpress_machine) { Machine.create(name: 'benchpress', user: user) }
+  context 'with a activity created' do
+    let!(:benchpress_activity) { Activity.create(name: 'benchpress', user: user) }
 
     scenario 'add an exercise' do
       log_in(user)
       visit root_path
-      expect(page).to have_content(benchpress_machine.name)
+      expect(page).to have_content(benchpress_activity.name)
       find_link('Add Exercise').click
       expect(page).to have_content('Add an Exercise for benchpress')
     end
@@ -27,10 +27,10 @@ RSpec.describe 'Splash page', type: :feature, js: true do
     scenario 'as another user' do
       log_in(another_user)
       visit root_path
-      expect(page).not_to have_content(benchpress_machine.name)
+      expect(page).not_to have_content(benchpress_activity.name)
     end
 
-    scenario 'navigate to machine show' do
+    scenario 'navigate to activity show' do
       log_in(user)
       visit root_path
       find_link('benchpress').click

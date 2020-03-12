@@ -1,0 +1,15 @@
+<p>Add an Activity</p>
+
+<% if @activity.errors.any? %>
+  <ul>
+  <% @activity.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @activity, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create Activity" %>
+<% end %>

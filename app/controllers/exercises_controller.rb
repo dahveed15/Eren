@@ -1,14 +1,14 @@
 class ExercisesController < ApplicationController
 
   def new
-    @machine = Machine.find(params[:machine_id])
-    @previous_exercise = @machine.exercises.last
-    @exercise = @machine.exercises.new
+    @activity = Activity.find(params[:activity_id])
+    @previous_exercise = @activity.exercises.last
+    @exercise = @activity.exercises.new
   end
 
   def create
-    @machine = Machine.find(params[:machine_id])
-    @exercise = @machine.exercises.new(exercise_params)
+    @activity = Activity.find(params[:activity_id])
+    @exercise = @activity.exercises.new(exercise_params)
 
     if @exercise.save
       redirect_to root_path

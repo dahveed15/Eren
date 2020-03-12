@@ -1,13 +1,13 @@
 <div class='center-contents'>
-  <% if @machine.exercises.present? %>
-    <p><%= @machine.name %></p>
+  <% if @activity.exercises.present? %>
+    <p><%= @activity.name %></p>
     <div class='center-weight-data-table'>
       <table class='table-styling'>
         <tr>
           <td>Exercises</td>
           <td>Created At</td>
         </tr>
-        <% @machine.exercises.each do |exercise| %>
+        <% @activity.exercises.each do |exercise| %>
           <tr>
             <td><%= "#{exercise.sets} sets of #{exercise.reps} reps at #{exercise.weight_value} #{exercise.units}" %></td>
             <td><%= exercise.created_at.strftime('%a, %b %-d, %Y') %></td>
@@ -16,6 +16,6 @@
       </table>
     </div>
   <% else %>
-    <p><%= "No exercises found for #{@machine.name}." %></p>
+    <p><%= "No exercises found for #{@activity.name}." %></p>
   <% end %>
 </div>

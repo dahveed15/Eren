@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: machines
+# Table name: activities
 #
 #  id         :bigint           not null, primary key
 #  name       :string           not null
@@ -9,7 +9,7 @@
 #  user_id    :bigint
 #
 
-class Machine < ApplicationRecord
+class Activity < ApplicationRecord
   has_many :exercises
   belongs_to :user
   validates :name, presence: true, uniqueness: { scope: :user, case_sensitive: false }

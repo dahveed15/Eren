@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'dashboards/show'
 
   root to: 'home#show'
-  resources :machines, only: [:new, :create, :show] do
+  resources :activities, only: [:new, :create, :show] do
     resources :exercises, only: [:new, :create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,4 +1,4 @@
-<p>Add an Exercise for <%= @machine.name %> </p>
+<p>Add an Exercise for <%= @activity.name %> </p>
 
 <% if @exercise.errors.any? %>
   <ul>
@@ -8,7 +8,7 @@
   </ul>
 <% end %>
 
-<%= form_with model: @exercise, url: machine_exercises_path(@machine), local: true do |f| %>
+<%= form_with model: @exercise, url: activity_exercises_path(@activity), local: true do |f| %>
   <div class='exercise-form-input-fields'>
     <div class='form-input-spacing'>
       <%= f.label :reps, class: 'label-spacing' %>
