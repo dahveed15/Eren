@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_165723) do
+ActiveRecord::Schema.define(version: 2020_03_18_163805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_165723) do
     t.integer "reps"
     t.integer "sets"
     t.integer "weight_value"
-    t.bigint "machine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "units"
@@ -37,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_165723) do
     t.string "distance_unit"
     t.bigint "activity_id"
     t.index ["activity_id"], name: "index_exercises_on_activity_id"
-    t.index ["machine_id"], name: "index_exercises_on_machine_id"
   end
 
   create_table "users", force: :cascade do |t|

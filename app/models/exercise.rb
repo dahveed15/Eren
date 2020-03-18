@@ -6,7 +6,6 @@
 #  reps          :integer
 #  sets          :integer
 #  weight_value  :integer
-#  machine_id    :bigint
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  units         :string
