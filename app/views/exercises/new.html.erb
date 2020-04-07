@@ -23,12 +23,17 @@
       </div>
     </div>
     <div class='form-input-spacing'>
+      <%= f.label :bodyweight, class: 'label-spacing' %>
+      <%= check_box_tag "exercise[bodyweight]" %>
+    </div>
+    <div class='form-input-spacing'>
       <%= f.label :weight_value, class: 'label-spacing' %>
       <%= f.text_field :weight_value, :value => @previous_exercise&.weight_value %>
       <div class='form-input-extra-field'>
         <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
       </div>
     </div>
+
   </div>
   <%= f.submit "Create Exercise" %>
 <% end %>

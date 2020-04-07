@@ -14,11 +14,19 @@
 #  distance      :integer
 #  distance_unit :string
 #  activity_id   :bigint
+#  bodyweight    :boolean
 #
 
 class Exercise < ApplicationRecord
   belongs_to :activity
   POSSIBLE_WEIGHT_UNITS = ['lbs', 'kg', 'units']
-  validates :reps, :sets, :weight_value, presence: true
+  validates :reps, :sets, presence: true
+  validate :weight_value_or_bodyweight
 
+  private
+  def weight_value_or_bodyweight
+    if !bodyweight && weight_value.nil?
+      errors.add(:weight_value, 'must be present if not a bodyweight exercise')
+    end
+  end
 end

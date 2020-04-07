@@ -14,7 +14,7 @@
           <tr>
             <td><%= link_to activity.name, activity_path(activity) %></td>
             <% if activity.exercises.present? %>
-              <td><%= "#{activity.exercises.last.sets} sets of #{activity.exercises.last.reps} reps at #{activity.exercises.last.weight_value} #{activity.exercises.last.units}" %></td>
+              <td><%= exercise_display_text(activity.exercises.last) %></td>
             <% else %>
               <td></td>
             <% end %>

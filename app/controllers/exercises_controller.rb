@@ -7,8 +7,9 @@ class ExercisesController < ApplicationController
   end
 
   def create
+    specified_params = exercise_params[:bodyweight].present? ? exercise_params.except(:units) : exercise_params
     @activity = Activity.find(params[:activity_id])
-    @exercise = @activity.exercises.new(exercise_params)
+    @exercise = @activity.exercises.new(specified_params)
 
     if @exercise.save
       redirect_to root_path
@@ -19,7 +20,7 @@ class ExercisesController < ApplicationController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:reps, :sets, :weight_value, :units)
+    params.require(:exercise).permit(:reps, :sets, :weight_value, :units, :bodyweight)
   end
 
 end
