@@ -9,12 +9,13 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  units         :string
-#  duration      :integer
-#  duration_unit :string
 #  distance      :integer
 #  distance_unit :string
 #  activity_id   :bigint
 #  bodyweight    :boolean
+#  hours         :integer
+#  minutes       :integer
+#  seconds       :integer
 #
 
 class Exercise < ApplicationRecord
