@@ -20,7 +20,7 @@ class ExercisesController < ApplicationController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:reps, :sets, :weight_value, :units, :bodyweight)
+    params.require(:exercise).permit(:reps, :sets, :weight_value, :units, :bodyweight, :hours, :minutes, :seconds)
   end
 
 end

@@ -33,7 +33,25 @@
         <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
       </div>
     </div>
-
+    <div class='form-input-spacing'>
+      <div class='label-spacing'>Time</div>
+      <div>
+        <div>
+          <%= f.text_field :hours, :value => @previous_exercise&.hours %>
+          <%= f.label :hours %>
+        </div>
+        <div>
+          <%= f.text_field :minutes, :value => @previous_exercise&.minutes %>
+          <%= f.label :minutes %>
+        </div>
+        <div>
+          <%= f.text_field :seconds, :value => @previous_exercise&.seconds %>
+          <%= f.label :seconds %>
+        </div>
+      </div>
+      <div class='form-input-extra-field'>
+      </div>
+    </div>
   </div>
   <%= f.submit "Create Exercise" %>
 <% end %>
