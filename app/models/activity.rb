@@ -12,5 +12,12 @@
 class Activity < ApplicationRecord
   has_many :exercises
   belongs_to :user
-  validates :name, presence: true, uniqueness: { scope: :user, case_sensitive: false }
+  validates :name, presence: true
+  validate :name_is_unique
+
+  def name_is_unique
+    if user.activities.where("replace(name, ' ', '') ILIKE replace(?, ' ', '')", name).length > 0
+      errors.add(:name, 'Activity already exists')
+    end
+  end
 end

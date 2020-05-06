@@ -12,6 +12,22 @@ RSpec.describe 'Activity', type: :feature do
     expect(page).to have_content('Lat Pulldown')
   end
 
+  scenario 'when a user fills an activity with a similar name' do
+    log_in(user)
+    visit new_activity_path
+    fill_in('activity[name]', :with => 'bench Press')
+    find_button('Create Activity').click
+    expect(page).to have_content("Activity already exists")
+  end
+
+  scenario 'another similar name' do
+    log_in(user)
+    visit new_activity_path
+    fill_in('activity[name]', :with => 'BenchPress')
+    find_button('Create Activity').click
+    expect(page).to have_content("Activity already exists")
+  end
+
   scenario 'create activity error handling' do
     log_in(user)
     visit new_activity_path
