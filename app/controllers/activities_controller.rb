@@ -17,6 +17,12 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def archive
+    @activity = Activity.find(params[:id])
+    @activity.archive!
+    redirect_to root_path
+  end
+
   private
   def activity_params
     params.require(:activity).permit(:name)

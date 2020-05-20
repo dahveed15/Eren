@@ -66,6 +66,7 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'timecop'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

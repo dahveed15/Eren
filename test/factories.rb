@@ -7,4 +7,9 @@ FactoryBot.define do
     # if needed
     # is_active true
   end
+
+  factory :activity do
+    association :user
+    name { 'benchpress'}
+  end
 end

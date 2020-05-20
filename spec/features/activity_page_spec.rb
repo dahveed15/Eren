@@ -35,9 +35,19 @@ RSpec.describe 'Activity', type: :feature do
     expect(page).to have_content("Name can't be blank")
   end
 
-  scenario 'activity show' do
-    log_in(user)
-    visit activity_path(benchpress_activity)
-    expect(page).not_to have_content('No exercises found for benchpress.')
+  describe 'activity show' do
+
+    scenario 'it displays an archive button' do
+      log_in(user)
+      visit activity_path(benchpress_activity)
+      click_link('Archive Activity')
+      expect(page).not_to have_content('benchpress')
+    end
+
+    scenario 'when an activity does not have exercises' do
+      log_in(user)
+      visit activity_path(benchpress_activity)
+      expect(page).not_to have_content('No exercises found for benchpress.')
+    end
   end
 end

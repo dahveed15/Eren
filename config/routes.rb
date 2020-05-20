@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :activities, only: [:new, :create, :show] do
     resources :exercises, only: [:new, :create]
   end
+
+  post 'activities/:id/archive', :to => 'activities#archive', as: 'archive_activity'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
