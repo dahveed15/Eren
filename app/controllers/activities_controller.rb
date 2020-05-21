@@ -17,6 +17,19 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def archive
     @activity = Activity.find(params[:id])
     @activity.archive!

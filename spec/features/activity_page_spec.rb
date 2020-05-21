@@ -37,6 +37,16 @@ RSpec.describe 'Activity', type: :feature do
 
   describe 'activity show' do
 
+    scenario 'it displays an edit Activity button' do
+      log_in(user)
+      visit activity_path(benchpress_activity)
+      click_link('Edit Activity')
+      fill_in('activity[name]', :with => 'Benchpress')
+      find_button('Save').click
+      expect(page).to have_content('Benchpress')
+      expect(page).not_to have_content('benchpress')
+    end
+
     scenario 'it displays an archive button' do
       log_in(user)
       visit activity_path(benchpress_activity)

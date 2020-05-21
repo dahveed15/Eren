@@ -23,7 +23,8 @@ class Activity < ApplicationRecord
 
   def name_is_unique
     if name_changed?
-      if user.activities.where("replace(name, ' ', '') ILIKE replace(?, ' ', '')", name).length > 0
+      activities_with_similar_names = user.activities.where("replace(name, ' ', '') ILIKE replace(?, ' ', '')", name)
+      if activities_with_similar_names.any? { |activity| activity.id != id }
         errors.add(:name, 'Activity already exists')
       end
     end

@@ -24,4 +24,19 @@ RSpec.describe Activity, :type => :model do
       end
     end
   end
+
+  describe '#name_is_unique' do
+
+    context 'when creating a new activity with a name similar to an existing activity' do
+      let!(:existing_activity) { FactoryBot.create(:activity, name: 'bench press') }
+      it 'is not valid' do
+       expect(Activity.new({name: 'benchpress', user: existing_activity.user})).to_not be_valid
+      end
+
+      it 'lets a user update an existing activity' do
+        existing_activity.name = 'benchpress'
+        expect(existing_activity).to be_valid
+      end
+    end
+  end
 end
