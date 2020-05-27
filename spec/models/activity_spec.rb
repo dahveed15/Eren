@@ -33,6 +33,16 @@ RSpec.describe Activity, :type => :model do
        expect(Activity.new({name: 'benchpress', user: existing_activity.user})).to_not be_valid
       end
 
+      context 'when existing activity is archived' do
+        before do
+          existing_activity.archive!
+        end
+
+        it 'is valid' do
+          expect(Activity.new({name: 'benchpress', user: existing_activity.user})).to be_valid
+        end
+      end
+
       it 'lets a user update an existing activity' do
         existing_activity.name = 'benchpress'
         expect(existing_activity).to be_valid

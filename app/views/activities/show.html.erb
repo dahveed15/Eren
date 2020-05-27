@@ -1,7 +1,8 @@
 <div class='center-contents'>
+  <p><%= @activity.name %></p>
+  <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get)  %>
+  <%= link_to('Archive Activity', archive_activity_path(@activity), method: :post)  %>
   <% if @activity.exercises.present? %>
-    <p><%= @activity.name %></p>
-    <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get)  %>
     <div class='center-weight-data-table'>
       <table class='table-styling'>
         <tr>
@@ -15,9 +16,8 @@
           </tr>
         <% end %>
       </table>
-      <%= link_to('Archive Activity', archive_activity_path(@activity), method: :post)  %>
     </div>
   <% else %>
-    <p><%= "No exercises found for #{@activity.name}." %></p>
+    <p><%= "No exercises found." %></p>
   <% end %>
 </div>
