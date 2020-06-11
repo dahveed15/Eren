@@ -9,7 +9,10 @@
 
 .center-weight-data-table {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 62%;
+  margin: 0 auto;
 }
 
 .center-contents {

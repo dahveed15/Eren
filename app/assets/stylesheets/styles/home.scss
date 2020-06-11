@@ -2,6 +2,16 @@
   margin-bottom: 10px;
 }
 
+.activity-card {
+  border: 1px gray solid;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 3px 5px gray;
+  margin-top: 20px;
+  width: 183px;
+}
+
 .add-activity-button {
   background-color: #30bdc9;
   color: white;
@@ -9,4 +19,29 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.activity-name {
+  margin-bottom: 5px;
+}
+
+.add-excercise {
+  margin-top: 12px;
+  padding: 16px;
+}
+
+.activity-name a {
+  text-decoration: none;
+  font-size: 29px;
+  color: #F5A090;
+}
+
+.add-excercise a {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-shadow: 0 1px 1px;
+  color: black;
+  background: oldlace;
 }

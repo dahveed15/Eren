@@ -4,24 +4,17 @@
     <%= link_to "Add Activity", new_activity_path, class: 'add-activity-button' %>
     <p>All Activity</p>
     <div class='center-weight-data-table'>
-      <table class='table-styling'>
-        <tr>
-          <td>Machine</td>
-          <td>Most Recent Exercise</td>
-          <td>New Exercise</td>
-        </tr>
         <% @activities.each do |activity| %>
-          <tr>
-            <td><%= link_to activity.name, activity_path(activity) %></td>
+          <div class='activity-card'>
+            <div class='activity-name'><%= link_to activity.name, activity_path(activity) %></div>
             <% if activity.exercises.present? %>
-              <td><%= exercise_display_text(activity.exercises.last) %></td>
+              <div><%= exercise_display_text(activity.exercises.last) %></div>
             <% else %>
-              <td></td>
+              <div></div>
             <% end %>
-            <td><%= link_to "Add Exercise", new_activity_exercise_path(activity) %></td>
-          </tr>
+            <div class='add-excercise'><%= link_to "Add Exercise", new_activity_exercise_path(activity) %></div>
+          </div>
         <% end %>
-      </table>
     </div>
   </div>
 </div>
