@@ -1,57 +1,63 @@
-<p>Add an Exercise for <%= @activity.name %> </p>
+<div class='center-exercise-view-contents'>
+  <div>
+    <p class='exercise-new-title-text'>Add an Exercise for <%= @activity.name %> </p>
 
-<% if @exercise.errors.any? %>
-  <ul>
-  <% @exercise.errors.full_messages.each do |error_message| %>
-    <li><%= error_message %></li>
-  <% end %>
-  </ul>
-<% end %>
+    <% if @exercise.errors.any? %>
+      <ul>
+      <% @exercise.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+      <% end %>
+      </ul>
+    <% end %>
 
-<%= form_with model: @exercise, url: activity_exercises_path(@activity), local: true do |f| %>
-  <div class='exercise-form-input-fields'>
-    <div class='form-input-spacing'>
-      <%= f.label :reps, class: 'label-spacing' %>
-      <%= f.text_field :reps, :value => @previous_exercise&.reps %>
-      <div class='form-input-extra-field'>
-      </div>
-    </div>
-    <div class='form-input-spacing'>
-      <%= f.label :sets, class: 'label-spacing' %>
-      <%= f.text_field :sets, :value => @previous_exercise&.sets || @exercise.sets %>
-      <div class='form-input-extra-field'>
-      </div>
-    </div>
-    <div class='form-input-spacing'>
-      <%= f.label :bodyweight, class: 'label-spacing' %>
-      <%= check_box_tag "exercise[bodyweight]" %>
-    </div>
-    <div class='form-input-spacing'>
-      <%= f.label :weight_value, class: 'label-spacing' %>
-      <%= f.text_field :weight_value, :value => @previous_exercise&.weight_value %>
-      <div class='form-input-extra-field'>
-        <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
-      </div>
-    </div>
-    <div class='form-input-spacing'>
-      <div class='label-spacing'>Time</div>
-      <div>
-        <div>
-          <%= f.text_field :hours, :value => @previous_exercise&.hours %>
-          <%= f.label :hours %>
+    <%= form_with model: @exercise, url: activity_exercises_path(@activity), local: true do |f| %>
+      <div class='exercise-form-input-fields'>
+        <div class='form-input-spacing'>
+          <%= f.label :reps, 'Reps *', class: 'label-spacing' %>
+          <%= f.text_field :reps, :value => @previous_exercise&.reps %>
+          <div class='form-input-extra-field'>
+          </div>
         </div>
-        <div>
-          <%= f.text_field :minutes, :value => @previous_exercise&.minutes %>
-          <%= f.label :minutes %>
+        <div class='form-input-spacing'>
+          <%= f.label :sets, 'Sets *', class: 'label-spacing' %>
+          <%= f.text_field :sets, :value => @previous_exercise&.sets || @exercise.sets %>
+          <div class='form-input-extra-field'>
+          </div>
         </div>
-        <div>
-          <%= f.text_field :seconds, :value => @previous_exercise&.seconds %>
-          <%= f.label :seconds %>
+        <div class='form-input-spacing'>
+          <%= f.label :bodyweight, class: 'label-spacing' %>
+          <%= check_box_tag "exercise[bodyweight]" %>
+        </div>
+        <div class='form-input-spacing'>
+          <%= f.label :weight_value, class: 'label-spacing' %>
+          <%= f.text_field :weight_value, :value => @previous_exercise&.weight_value %>
+          <div class='form-input-extra-field'>
+            <%= f.select :units, options_for_select([ "lbs", "kg", "units" ], @previous_exercise&.units) %>
+          </div>
+        </div>
+        <div class='form-input-spacing'>
+          <div class='label-spacing'>Time</div>
+          <div>
+            <div>
+              <%= f.text_field :hours, :value => @previous_exercise&.hours %>
+              <%= f.label :hours %>
+            </div>
+            <div>
+              <%= f.text_field :minutes, :value => @previous_exercise&.minutes %>
+              <%= f.label :minutes %>
+            </div>
+            <div>
+              <%= f.text_field :seconds, :value => @previous_exercise&.seconds %>
+              <%= f.label :seconds %>
+            </div>
+          </div>
+          <div class='form-input-extra-field'>
+          </div>
         </div>
       </div>
-      <div class='form-input-extra-field'>
+      <div class='create-exercise-button'>
+        <%= f.submit "Create Exercise" %>
       </div>
-    </div>
+    <% end %>
   </div>
-  <%= f.submit "Create Exercise" %>
-<% end %>
+</div>

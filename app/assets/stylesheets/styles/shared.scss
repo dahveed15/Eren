@@ -18,3 +18,23 @@
 .center-contents {
   text-align: center;
 }
+
+.center-exercise-view-contents {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 6px 7px 5px grey;
+}
+
+.exercise-new-title-text {
+  font-size: 29px;
+}
+
+.create-exercise-button {
+  margin-bottom: 23px;
+  display: flex;
+  justify-content: center;
+}
