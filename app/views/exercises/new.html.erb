@@ -27,6 +27,8 @@
         <div class='form-input-spacing'>
           <%= f.label :bodyweight, class: 'label-spacing' %>
           <%= check_box_tag "exercise[bodyweight]" %>
+          <div class='form-input-extra-field'>
+          </div>
         </div>
         <div class='form-input-spacing'>
           <%= f.label :weight_value, class: 'label-spacing' %>
@@ -36,18 +38,18 @@
           </div>
         </div>
         <div class='form-input-spacing'>
-          <div class='label-spacing'>Time</div>
+          <div class='label-spacing time-label'>Time</div>
           <div>
             <div>
-              <%= f.text_field :hours, :value => @previous_exercise&.hours %>
+              <%= f.text_field :hours, :value => @previous_exercise&.hours, class: 'time-input' %>
               <%= f.label :hours %>
             </div>
             <div>
-              <%= f.text_field :minutes, :value => @previous_exercise&.minutes %>
+              <%= f.text_field :minutes, :value => @previous_exercise&.minutes, class: 'time-input' %>
               <%= f.label :minutes %>
             </div>
             <div>
-              <%= f.text_field :seconds, :value => @previous_exercise&.seconds %>
+              <%= f.text_field :seconds, :value => @previous_exercise&.seconds, class: 'time-input' %>
               <%= f.label :seconds %>
             </div>
           </div>
