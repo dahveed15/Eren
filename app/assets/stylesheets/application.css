@@ -33,3 +33,13 @@ body {
   font-family: 'Francois One', sans-serif;
   color: white;
 }
+
+.log-out-text {
+  text-decoration: none;
+  color: white;
+}
+
+.logged-in-header {
+  display: flex;
+  justify-content: space-between;
+}

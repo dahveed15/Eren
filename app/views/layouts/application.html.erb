@@ -17,11 +17,13 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if current_user %>
-      <div class='signed-in-as-header'>
-        <%= "Signed in as: #{current_user.email}" %>
-      </div>
-      <div>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      <div class='logged-in-header'>
+        <div class='signed-in-as-header signed-in-as-text'>
+          <%= "Signed in as: #{current_user.email}" %>
+        </div>
+        <div class='pink-button'>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'log-out-text' %>
+        </div>
       </div>
     <% end %>
     <%= yield %>
