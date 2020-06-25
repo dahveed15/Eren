@@ -1,21 +1,17 @@
 <div class='center-contents'>
-  <p><%= @activity.name %></p>
-  <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get)  %>
-  <%= link_to('Archive Activity', archive_activity_path(@activity), method: :post)  %>
+  <h1 class='page-title'><%= @activity.name %></h1>
+  <div class='activity-show-button activity-show-button-spacing'>
+    <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get, class: 'pink-button')  %>
+    <%= link_to('Archive Activity', archive_activity_path(@activity), method: :post, class: 'pink-button')  %>
+  </div>
   <% if @activity.exercises.present? %>
-    <div class='center-weight-data-table'>
-      <table class='table-styling'>
-        <tr>
-          <td>Exercises</td>
-          <td>Created At</td>
-        </tr>
+    <div class='activity-button-container'>
         <% @activity.exercises.each do |exercise| %>
-          <tr>
-            <td><%= "#{exercise.sets} sets of #{exercise.reps} reps at #{exercise.weight_value} #{exercise.units}" %></td>
-            <td><%= exercise.created_at.strftime('%a, %b %-d, %Y') %></td>
-          </tr>
+        <div class='activity-card'>
+          <div class='exercise-display-text'><%= exercise_display_text(exercise) %></div>
+          <div><%= exercise.created_at.strftime('%a, %b %-d, %Y') %></div>
+        </div>
         <% end %>
-      </table>
     </div>
   <% else %>
     <p><%= "No exercises found." %></p>
