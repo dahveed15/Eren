@@ -10,7 +10,7 @@ RSpec.describe 'Splash page', type: :feature, js: true do
     expect(page).to have_content("Signed in as: #{user.email}")
     expect(page).to have_content('Welcome to Eren, the best app ever!')
     find_link('Add Activity').click
-    expect(page).to have_content('Add an Activity')
+    expect(page).to have_content('Add Activity')
   end
 
   context 'with a activity created' do

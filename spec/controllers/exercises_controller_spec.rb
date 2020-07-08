@@ -16,6 +16,10 @@ RSpec.describe ExercisesController, type: :controller do
     describe "when the bodyweight param is truthy" do
       let(:user) { FactoryBot.create(:user) }
 
+      before do
+        sign_in(user)
+      end
+
       let(:activity) { Activity.create!(name: 'pushups', user: user)}
       subject { post :create, params: { exercise: { reps: 5, sets: 3, bodyweight: true, weight_value: "", units: 'lbs' }, activity_id: activity.id } }
 

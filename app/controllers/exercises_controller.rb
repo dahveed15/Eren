@@ -1,5 +1,6 @@
 class ExercisesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def new
     @activity = Activity.find(params[:activity_id])
     @previous_exercise = @activity.exercises.last
