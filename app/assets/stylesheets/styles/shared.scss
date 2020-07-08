@@ -19,10 +19,23 @@
   text-align: center;
 }
 
-.center-exercise-view-contents {
+.activity-container-spacing {
+  max-width: 487px;
+  padding-bottom: 40px;
+}
+
+.activity-name {
+  margin-bottom: 23px;
+}
+
+.activity-save-button {
+  margin: 0 auto;
+  width: 50px;
+}
+
+.center-view-contents {
   display: flex;
   justify-content: center;
-  max-width: 600px;
   margin: 0 auto;
   background: white;
   border-radius: 50px;
