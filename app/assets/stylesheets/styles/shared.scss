@@ -21,7 +21,24 @@
 
 .activity-container-spacing {
   max-width: 487px;
-  padding-bottom: 40px;
+  padding: 40px 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 487px;
+}
+
+.page-title-text-width {
+  width: 50%;
+}
+
+.align-back-button {
+  display: flex;
+  align-items: center;
+  width: 25%;
 }
 
 .activity-name {

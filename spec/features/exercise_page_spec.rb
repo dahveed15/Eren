@@ -20,6 +20,13 @@ RSpec.describe 'Add Activity page', type: :feature, js: true do
 
     end
 
+    scenario 'back button' do
+      log_in(user)
+      visit new_activity_exercise_path(activity)
+      click_link('Back')
+      expect(page).to have_content('Welcome to Eren')
+    end
+
     context 'with an exercise already created' do
       let!(:previous_exercise) { activity.exercises.create(reps: 12, sets: 5, weight_value: 100, units: 'kg')}
       scenario 'it prefills the input fields with the previous exercise data' do
