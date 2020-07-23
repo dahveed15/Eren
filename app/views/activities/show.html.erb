@@ -11,7 +11,7 @@
   </div>
   <div class='activity-show-button activity-show-button-spacing'>
     <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get, class: 'pink-button')  %>
-    <%= link_to('Archive Activity', archive_activity_path(@activity), method: :post, class: 'pink-button')  %>
+    <%= link_to('Archive Activity', archive_activity_path(@activity), data: {confirm:"Are you sure?"}, method: :post, class: 'pink-button')  %>
   </div>
   <% if @activity.exercises.present? %>
     <div class='activity-button-container'>
