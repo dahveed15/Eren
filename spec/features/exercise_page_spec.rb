@@ -23,7 +23,7 @@ RSpec.describe 'Add Activity page', type: :feature, js: true do
     scenario 'back button' do
       log_in(user)
       visit new_activity_exercise_path(activity)
-      click_link('Back')
+      click_on(class: 'qa-back-button')
       expect(page).to have_content('Welcome to Eren')
     end
 

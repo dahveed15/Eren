@@ -16,7 +16,7 @@ RSpec.describe 'Activity', type: :feature do
     scenario 'on click' do
       log_in(user)
       visit new_activity_path
-      click_link('Back')
+      click_on(class: 'qa-back-button')
       expect(page).to have_content('Welcome to Eren')
     end
   end
@@ -59,7 +59,7 @@ RSpec.describe 'Activity', type: :feature do
     scenario 'it displays a back button' do
       log_in(user)
       visit activity_path(benchpress_activity)
-      click_link('Back')
+      click_on(class: 'qa-back-button')
       expect(page).to have_content('Welcome to Eren')
     end
 
@@ -82,7 +82,7 @@ RSpec.describe 'Activity', type: :feature do
       log_in(user)
       visit activity_path(benchpress_activity)
       click_link('Edit Activity')
-      click_link('Back')
+      click_on(class: 'qa-back-button')
       expect(page).to have_content('Archive Activity')
     end
   end
