@@ -36,5 +36,12 @@ RSpec.describe 'Splash page', type: :feature, js: true do
       find_link('benchpress').click
       expect(page).to have_content('No exercises found.')
     end
+
+    scenario 'navigate to options page' do
+      log_in(user)
+      visit root_path
+      find_link('Options').click
+      expect(page).to have_content('Options')
+    end
   end
 end

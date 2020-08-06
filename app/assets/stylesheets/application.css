@@ -43,3 +43,12 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.toolbar-right-side {
+  display: flex;
+  align-items: center;
+}
+
+.options-link {
+  margin-right: 20px;
+}

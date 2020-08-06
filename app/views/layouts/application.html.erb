@@ -21,8 +21,13 @@
         <div class='signed-in-as-header signed-in-as-text'>
           <%= "Signed in as: #{current_user.email}" %>
         </div>
-        <div class='pink-button'>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'log-out-text' %>
+        <div class='toolbar-right-side'>
+          <div class='options-link'>
+            <%= link_to "Options", options_path, method: :get %>
+          </div>
+          <div class='pink-button'>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'log-out-text' %>
+          </div>
         </div>
       </div>
     <% end %>
