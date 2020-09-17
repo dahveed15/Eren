@@ -37,6 +37,10 @@ class ActivitiesController < ApplicationController
     redirect_to root_path
   end
 
+  def archived_activities
+    @activies = Activity.where(archived_at: true)
+  end
+
   private
   def activity_params
     params.require(:activity).permit(:name)
