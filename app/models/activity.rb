@@ -16,6 +16,7 @@ class Activity < ApplicationRecord
   validates :name, presence: true
   validate :name_is_unique
   scope :unarchived, -> { where(archived_at: nil) }
+  scope :archived, -> { where.not(archived_at: nil)}
 
   def archive!
     update!(archived_at: Time.zone.now)

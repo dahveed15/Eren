@@ -38,7 +38,7 @@ class ActivitiesController < ApplicationController
   end
 
   def archived_activities
-    @activies = Activity.where(archived_at: true)
+    @activities = current_user.activities.archived
   end
 
   private

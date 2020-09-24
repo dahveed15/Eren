@@ -9,4 +9,16 @@
     </div>
     <h1 class='page-title page-title-text-width'>Archived Activities</h1>
   </div>
+  <div class='center-weight-data-table'>
+      <% @activities.each do |activity| %>
+        <div class='activity-card'>
+          <div class='activity-name'><%= link_to activity.name, activity_path(activity) %></div>
+          <% if activity.exercises.present? %>
+            <div><%= exercise_display_text(activity.exercises.last) %></div>
+          <% else %>
+            <div></div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
 </div>
