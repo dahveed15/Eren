@@ -22,6 +22,14 @@ class Activity < ApplicationRecord
     update!(archived_at: Time.zone.now)
   end
 
+  def unarchive!
+    update!(archived_at: nil)
+  end
+
+  def archived?
+    archived_at.present?
+  end
+
   def name_is_unique
     if name_changed?
       activities_with_similar_names = user.activities.where("replace(name, ' ', '') ILIKE replace(?, ' ', '')", name)

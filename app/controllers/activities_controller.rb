@@ -37,6 +37,12 @@ class ActivitiesController < ApplicationController
     redirect_to root_path
   end
 
+  def unarchive
+    @activity = Activity.find(params[:id])
+    @activity.unarchive!
+    redirect_to activity_path
+  end
+
   def archived_activities
     @activities = current_user.activities.archived
   end

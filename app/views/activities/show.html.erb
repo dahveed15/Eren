@@ -9,10 +9,18 @@
     </div>
     <h1 class='page-title page-title-text-width'><%= @activity.name %></h1>
   </div>
-  <div class='activity-show-button activity-show-button-spacing'>
-    <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get, class: 'pink-button')  %>
-    <%= link_to('Archive Activity', archive_activity_path(@activity), data: {confirm:"Are you sure?"}, method: :post, class: 'pink-button')  %>
-  </div>
+
+  <% if @activity.archived? %>
+    <div class='activity-show-button activity-show-single-button-spacing'>
+      <%= link_to('Unarchive Activity', unarchive_activity_path(@activity), method: :post, class: 'pink-button')  %>
+    </div>
+  <% else %>
+    <div class='activity-show-button activity-show-button-spacing'>
+      <%= link_to('Edit Activity', edit_activity_path(@activity), method: :get, class: 'pink-button')  %>
+      <%= link_to('Archive Activity', archive_activity_path(@activity), data: {confirm:"Are you sure?"}, method: :post, class: 'pink-button')  %>
+    </div>
+  <% end %>
+
   <% if @activity.exercises.present? %>
     <div class='activity-button-container'>
         <% @activity.exercises.each do |exercise| %>

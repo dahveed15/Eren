@@ -75,6 +75,20 @@ RSpec.describe 'Activity', type: :feature do
       visit activity_path(benchpress_activity)
       expect(page).not_to have_content('No exercises found for benchpress.')
     end
+
+    describe 'when the activity is archived' do
+      before do
+        benchpress_activity.archive!
+      end
+
+      scenario 'it displays an unarchive activity button' do
+        log_in(user)
+        visit activity_path(benchpress_activity)
+        expect(page).not_to have_content('Archive Activity')
+        expect(page).not_to have_content('Edit Activity')
+        expect(page).to have_content('Unarchive Activity')
+      end
+    end
   end
 
   describe 'activity edit page' do
