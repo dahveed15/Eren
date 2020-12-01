@@ -43,5 +43,13 @@ RSpec.describe 'Splash page', type: :feature, js: true do
       find_link('Options').click
       expect(page).to have_content('Options')
     end
+
+    scenario 'navigate to workouts page' do
+      log_in(user)
+      visit root_path
+      find_link('Add Workout').click
+      expect(page).to have_content('Add a Workout')
+    end
+
   end
 end
