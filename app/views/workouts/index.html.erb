@@ -1,0 +1,13 @@
+<h1>Workouts</h1>
+
+<% if @workouts.present? %>
+  <div class='activity-button-container'>
+      <% @workouts.each do |workout| %>
+      <div class='activity-card'>
+        <%= workout.name %>
+      </div>
+      <% end %>
+  </div>
+<% else %>
+  <p><%= "No workouts found." %></p>
+<% end %>

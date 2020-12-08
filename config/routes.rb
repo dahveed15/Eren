@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :exercises, only: [:new, :create]
   end
 
-  resources :workouts, only: [:new]
+  resources :workouts, only: [:new, :create, :index]
 
   get '/options', :to => 'options#show'
   post 'activities/:id/archive', :to => 'activities#archive', as: 'archive_activity'
