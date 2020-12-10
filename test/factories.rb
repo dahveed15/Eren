@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :workout do
-    name { "MyString" }
+    name { "Cardio" }
   end
 
   factory :user do

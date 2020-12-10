@@ -4,7 +4,9 @@
   <div class='activity-button-container'>
       <% @workouts.each do |workout| %>
       <div class='activity-card'>
-        <%= workout.name %>
+        <%= link_to workout_path(workout)  do %>
+          <%= workout.name %>
+        <% end %>
       </div>
       <% end %>
   </div>
